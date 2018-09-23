@@ -143,7 +143,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.btnCheck:
-                i=new Intent(MainActivity.this,MapsActivity.class);
+                i=new Intent(MainActivity.this,AvanthiScreen.class);
                 startActivity(i);
                 break;
         }

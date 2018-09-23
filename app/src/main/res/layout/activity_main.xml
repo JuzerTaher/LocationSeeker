@@ -4,30 +4,74 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorText"
+    android:padding="5dp"
     tools:context=".MainActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/colorBackground2"
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/txtLocation"
-            android:layout_width="wrap_content"
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Latitude,Longitude"/>
+            android:layout_margin="10dp"
+            android:gravity="center_horizontal"
+            android:text="AVANTHI"
+            android:textColor="@color/colorText"
+            android:textSize="44sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginBottom="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="BUS LOCATION:"
+                android:textColor="@color/colorText"
+                android:textSize="22sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/txtLocation"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="5dp"
+                android:textColor="@color/colorText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Latitude,Longitude"
+                android:textSize="18sp"/>
+
+        </LinearLayout>
 
         <android.support.v4.widget.Space
             android:layout_width="wrap_content"
-            android:layout_height="60dp" />
+            android:layout_height="40sp" />
 
 
         <Button
             android:id="@+id/btnCheck"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="CHECK>>!"
-            tools:ignore="InvalidId" />
+            android:text="TRACK ON MAP..!"
+            android:textColor="@color/colorText"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:background="@drawable/button_background"
+            android:layout_gravity="center_horizontal"/>
 
     </LinearLayout>
 

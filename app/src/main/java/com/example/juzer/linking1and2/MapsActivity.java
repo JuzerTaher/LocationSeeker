@@ -59,7 +59,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
-        mMap.setMapType(GoogleMap.MAP_TYPE_TERRAIN);
+        mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
 
         // Add a marker in current Location and avanthi location
         LatLng currentLocation = new LatLng(lat, lon);
@@ -67,13 +67,13 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
         //Avanthi Marker
         mMap.addMarker(new MarkerOptions().position(avanthi).title("Avanthi College")
-                .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE)));
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(currentLocation,17));
+                .icon(BitmapDescriptorFactory.fromResource(R.drawable.avanthi)));
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(currentLocation,15));
 
         //Present location marker
         mMap.addMarker(new MarkerOptions().position(currentLocation).title("Your Location")
-        .icon(BitmapDescriptorFactory.fromResource(R.drawable.bikemapfinal)));
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(currentLocation,17));
+        .icon(BitmapDescriptorFactory.fromResource(R.drawable.bus)));
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(currentLocation,15));
 
 
         String url=getRequestUrl(currentLocation,avanthi);
@@ -204,15 +204,15 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 }
 
                 polylineOptions.addAll(points);
-                polylineOptions.width(15);
-                polylineOptions.color(Color.BLUE);
+                polylineOptions.width(10);
+                polylineOptions.color(R.color.colorOfPath);
                 polylineOptions.geodesic(true);
             }
 
             if (polylineOptions!=null) {
                 mMap.addPolyline(polylineOptions);
             } else {
-                Toast.makeText(getApplicationContext(), "Direction not found!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "Direction not found!.. Try Again Later..", Toast.LENGTH_LONG).show();
             }
 
         }
